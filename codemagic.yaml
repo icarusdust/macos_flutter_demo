@@ -7,7 +7,7 @@ workflows:
       groups:
         - appstore_credentials
       vars:
-        BUNDLE_ID: "com.craastad.myMacosApp"
+        BUNDLE_ID: "com.myMacosApp.test"
         XCODE_WORKSPACE: "Runner.xcworkspace"
         XCODE_SCHEME: "Runner"
       flutter: stable
