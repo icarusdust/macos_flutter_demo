@@ -62,7 +62,7 @@ workflows:
 
           # Find the installer certificate commmon name in keychain
           INSTALLER_CERT_NAME=$(keychain list-certificates \
-            | jq '.[]
+            | jq '.[0]
               | select(.common_name
               | contains("Mac Developer Installer"))
               | .common_name' \
