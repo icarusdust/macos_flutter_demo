@@ -4,11 +4,16 @@ workflows:
     instance_type: mac_pro
     max_build_duration: 60
     environment:
+      groups:
+        - appstore_credentials
+      vars:
+        BUNDLE_ID: "com.craastad.myMacosApp"
+        XCODE_WORKSPACE: "Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
       flutter: stable
       xcode: latest
       cocoapods: default
-      groups:
-        - appstore_credentials # <-- (Includes APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY))
+          
     scripts:
       - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
         script: |
