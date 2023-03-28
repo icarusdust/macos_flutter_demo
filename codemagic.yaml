@@ -64,7 +64,7 @@ workflows:
           INSTALLER_CERT_NAME=$(keychain list-certificates \
             | jq '.[0]
               | select(.common_name
-              | contains("Mac Developer Application"))
+              | contains("Apple Distribution"))
               | .common_name' \
             | xargs)
 
