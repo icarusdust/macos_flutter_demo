@@ -27,7 +27,7 @@ workflows:
             --create
       - name: Retrieve certs
         script: |
-          app-store-connect list-certificates --type MAC_APP_DISTRIBUTION --save ||
+          app-store-connect list-certificates --type MAC_APP_DISTRIBUTION --save
       - name: Add cert   
         script: |
           keychain add-certificates
