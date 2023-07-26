@@ -1,7 +1,7 @@
 workflows:
   macOS-publishing-yaml:
     name: macOS Publishing
-    instance_type: mac_pro
+    instance_type: mac_mini_m1
     max_build_duration: 60
     environment:
       groups:
