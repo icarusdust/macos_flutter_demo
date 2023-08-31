@@ -72,7 +72,12 @@ workflows:
           xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
     artifacts:
       - build/macos/**/*.pkg
-    # publishing:
+    publishing:
+      scripts:
+         - name: Access
+           script: |
+             chmod 0644 "$TARGET_BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Frameworks/App.framework/Versions/A/Resources/flutter_assets/shaders/ink_sparkle.frag"
+             chmod 0644 "$TARGET_BUILD_DIR/App.framework/Versions/A/Resources/flutter_assets/shaders/ink_sparkle.frag"
     #   app_store_connect:
     #     api_key: $APP_STORE_CONNECT_PRIVATE_KEY         # Contents of the API key, can also reference environment variable such as $APP_STORE_CONNECT_PRIVATE_KEY
     #     key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER       # Alphanumeric value that identifies the API key, can also reference environment variable such as $APP_STORE_CONNECT_KEY_IDENTIFIER
